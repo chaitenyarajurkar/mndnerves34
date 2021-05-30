@@ -1,0 +1,60 @@
+<div style="padding-top:5px;">
+    <div style="width:50%">
+
+      <p>Enter Order</p>
+        <hr style="text-align:left;margin-left:0">
+            
+        <div class="form-inline">
+            <label >Order No:</label>
+            <input type="text" id="order" [(ngModel)]="obje.orderno">
+            <ng-container style="float: right;clear: both;">
+                <label >Purchase date:</label>
+                <input type="date" [(ngModel)]="obje.date" >
+            </ng-container>
+            
+            
+    </div>
+    <div class="form-inline">
+        <label >Customer name:</label>
+        <input type="text" id="name" [(ngModel)]="obje.name">
+        <label >Total Amount:</label>
+        <input type="number" [(ngModel)]="obje.amount" >
+        
+</div>
+   <button (click)="submitData()">Add other</button>
+   
+</div>
+<div style="margin-top:40px ;width: 50%;">
+    <p>Add Items</p>
+    <hr style="text-align:left;margin-left:0">
+     
+    <table>
+        <tr>
+          <th>Order no.</th>
+          <th>Purchase date</th>
+          <th>Customer name</th>
+          <th>Total Amount</th>
+          <th></th>
+        </tr>
+        <tr *ngIf="flag">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span  style="color: red;"><u>delete</u></span></td>
+        </tr>
+        <tr *ngFor="let x of data;let i=index">
+          <td>{{x.orderno}}</td>
+          <td>{{x.date}}</td>
+          <td>{{x.name}}</td>
+          <td>{{x.amount}}</td>
+          <td><span (click)="deleteObj()" style="color: red;"><u>delete</u></span></td>
+        </tr>
+        
+      </table>
+
+      <button (click)="svaeTols()">Save</button>
+      <button (click)="reset()">reset</button>
+    
+    </div>
+</div>

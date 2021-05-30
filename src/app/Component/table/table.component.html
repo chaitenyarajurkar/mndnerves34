@@ -1,0 +1,46 @@
+<div style="padding-top:5px;">
+
+<table>
+    <tr>
+
+        <th>order no</th>
+        <th>date</th>
+        <th>customer name</th>
+        <th>amount</th>
+    </tr>
+    <tr  *ngFor="let x of dataArray;let i=index">
+  
+        <td (click)="showRecord(i)">{{x.orderno}}</td>
+        <td (click)="showRecord(i)">{{x.date}}</td>
+        <td (click)="showRecord(i)">{{x.name}}</td>
+        <td (click)="showRecord(i)">{{x.amount}}</td>
+
+   
+    </tr>
+
+    
+</table>
+<div style="margin-top: 40px;"> 
+
+    <hr>
+</div>
+
+<table>
+    <tr>
+    <th>item name</th>
+    <th>item quantity</th>
+    <th>item price</th>
+    <th>order no.</th>
+</tr>
+<tr *ngFor="let x of dataArray3">
+    <td>{{x.name}}</td>
+        <td>{{x.quantity}}</td>
+        <td>{{x.price}}</td>
+        <td>{{x.orderno}}</td>
+</tr>
+
+</table>
+
+
+
+</div>
